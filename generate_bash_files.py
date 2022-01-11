@@ -60,13 +60,24 @@ def create_bash_files(chromosomes_dict, bash_template_file):
         file.close()
 
 
+def create_merge_list():
+    path = '/sise/vaksler-group/IsanaRNA/FISH_DATA/MappingToAcipenserRuthenusGenome/Freebayes/Ploidy4/Regions/'
+    male = 'Males_NC_048323.1.vcf'
+    female = 'Females_NC_048323.1.vcf'
+    merge_file = open('merge_file_list.txt',"a")
+    for i in range(23,81):
+        #merge_file.write(f'{path}Males_NC_0483{i}.1.vcf' + "\n")
+        merge_file.write(f'{path}Females_NC_0483{i}.1.vcf' + "\n")
+
+
 if __name__ == '__main__':
 
     vcf_file = 'Males_equal_to_ref_p4_unfiltered.vcf'
     bash_template_file = 'bash_template.sh'
 
-    # bash_template = template(bash_template_file)
-    chromosomes_dict = create_chromosomes_dict(vcf_file)
-    print(chromosomes_dict)
-    create_bash_files(chromosomes_dict, bash_template_file)
+    #chromosomes_dict = create_chromosomes_dict(vcf_file)
+    #print(chromosomes_dict)
+    #create_bash_files(chromosomes_dict, bash_template_file)
+    create_merge_list()
+
 
