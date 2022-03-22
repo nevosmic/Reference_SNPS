@@ -1,11 +1,11 @@
 import sys
 
 
-def create_bed(input_file, output_file):
+def create_bed(minimap2, output_file):
     out = open(output_file, "a")
-    with open(input_file) as input_object:
+    with open(minimap2) as minimap2_object:
         while True:
-            line = input_object.readline()
+            line = minimap2_object.readline()
             if not line:
                 break
             line_items = line.split()

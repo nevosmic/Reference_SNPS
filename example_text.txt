@@ -1,7 +1,0 @@
-CHROM	POS	MALE	FEMALE	QUAL	AF
-chrom	pos	5	5	50	1
-chrom	pos	0	5	50	1
-chrom	pos	5	4	50	1
-chrom	pos	1	1	50	1
-chrom	pos	0	1	50	1
-chrom	pos	2	2	50	1
