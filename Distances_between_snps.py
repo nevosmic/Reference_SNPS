@@ -5,7 +5,6 @@ def process_lines(row_items_1, row_items_2, chromosomes):
     chrom1 = row_items_1[0]
     pos_1 = int(row_items_1[1])
     chrom2 = row_items_2[0]
-
     pos_2 = int(row_items_2[1])
     if chrom1 == chrom2:
         dist = pos_2 - pos_1
@@ -17,7 +16,6 @@ def process_lines(row_items_1, row_items_2, chromosomes):
 
 def count_dist_between_snps(vcf_file):
     chromosomes = {}
-
     with open(vcf_file) as vcf_object:
         line_1 = vcf_object.readline()
         while True:
@@ -42,13 +40,16 @@ def collect_distances(chromosomes):
 
 
 if __name__ == '__main__':
-    # vcf_file = 'vcf_example.vcf'
-    # output_file = 'distances_vector.txt'
+
+    #vcf_file = 'example.txt'
+    #output_file = 'dist.txt'
 
     vcf_file = sys.argv[-2]
     output_file = sys.argv[-1]
 
     chromosomes = count_dist_between_snps(vcf_file)
-    distances_vector = collect_distances(chromosomes)
-    out = open(output_file, 'w')
-    out.write(str(distances_vector))
+
+    out = open(output_file, 'a')
+    out.write('hello')
+    out.write(str(collect_distances(chromosomes)))
+    print('Done')
